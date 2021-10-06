@@ -51,3 +51,23 @@ Map<int, Color> mPrimaryColor = {
   800: Color.fromRGBO(243, 114, 56, .9),
   900: Color.fromRGBO(243, 114, 56, 1),
 };
+
+Widget topContainer(Icon icon, String title) {
+  return GestureDetector(
+    child: Container(
+      height: 102.0,
+      // width: 100.0,
+      decoration: BoxDecoration(
+        color: kPrimary,
+        borderRadius: BorderRadius.all(Radius.circular(16.0)),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          icon,
+          Text(title),
+        ],
+      ),
+    ),
+  );
+}
