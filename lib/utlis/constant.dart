@@ -58,7 +58,7 @@ Widget topContainer(Icon icon, String title) {
       height: 102.0,
       // width: 100.0,
       decoration: BoxDecoration(
-        color: kPrimary,
+        color: Color(0xFFB0032B),
         borderRadius: BorderRadius.all(Radius.circular(16.0)),
       ),
       child: Column(

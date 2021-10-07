@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 children: [
                                   TextSpan(
-                                    text: '🙏',
+                                    text: '👋',
                                   ),
                                 ],
                               ),
@@ -92,10 +92,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           child: InkWell(
                             onTap: () {},
-                            child: Icon(
-                              Icons.notifications_outlined,
-                              size: 28.0,
+                            // child: Icon(
+                            //   Icons.notifications_outlined,
+                            //   size: 28.0,
+                            //   color: Colors.white,
+                            // ),
+                            child: ImageIcon(
+                              AssetImage("assets/icons/Notification.png"),
                               color: Colors.white,
+                              size: 30,
                             ),
                           ),
                         ),
@@ -123,10 +128,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     children: [
                       Expanded(
-                        flex: 3,
+                        flex: 8,
                         child: TextFormField(
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.search),
+                            prefixIcon: ImageIcon(
+                              AssetImage("assets/icons/Search.png"),
+                              color: Colors.grey,
+                              size: 10.0,
+                            ),
                             fillColor: Colors.white,
                             filled: true,
                             hintText: 'Search Your Property',
@@ -172,6 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: 10.0,
                       ),
                       Expanded(
+                        flex: 2,
                         child: Container(
                           height: 65.0,
                           child: ElevatedButton(
@@ -186,9 +196,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                             ),
-                            child: Icon(
-                              Icons.filter_alt_outlined,
-                              size: 40.0,
+                            child: ImageIcon(
+                              AssetImage("assets/icons/Filter2.png"),
+                              color: Colors.white,
+                              size: 30,
                             ),
                           ),
                         ),
@@ -219,31 +230,33 @@ class _HomeScreenState extends State<HomeScreen> {
                         //   ),
                         // ),
 
-                        child: topContainer(Icon(Icons.apartment), 'House'),
-                      ),
-                      SizedBox(
-                        width: 8.0,
-                      ),
-                      Expanded(
-                        child: topContainer(Icon(Icons.apartment), 'House'),
-                      ),
-                      SizedBox(
-                        width: 8.0,
-                      ),
-                      Expanded(
+                        // child: topContainer(Icon(Icons.apartment), 'House'),
                         child: Container(
                           height: 102.0,
                           // width: 100.0,
                           decoration: BoxDecoration(
-                            color: kPrimary,
+                            color: Color(0xFFD03032),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(16.0)),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.house),
-                              Text('House'),
+                              // Icon(Icons.house),
+                              ImageIcon(
+                                AssetImage("assets/icons/mansion.png"),
+                                color: Colors.white,
+                                size: 30,
+                              ),
+                              SizedBox(
+                                height: 10.0,
+                              ),
+                              Text(
+                                'House',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -256,15 +269,96 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 102.0,
                           // width: 100.0,
                           decoration: BoxDecoration(
-                            color: kPrimary,
+                            color: Color(0xFFD03032),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(16.0)),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.house),
-                              Text('House'),
+                              // Icon(Icons.house),
+                              ImageIcon(
+                                AssetImage("assets/icons/Shape.png"),
+                                color: Colors.white,
+                                size: 30,
+                              ),
+                              SizedBox(
+                                height: 10.0,
+                              ),
+                              Text(
+                                'Apart',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 102.0,
+                          // width: 100.0,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFD03032),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(16.0)),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              // Icon(Icons.house),
+                              ImageIcon(
+                                AssetImage("assets/icons/apartment.png"),
+                                color: Colors.white,
+                                size: 30,
+                              ),
+                              SizedBox(
+                                height: 10.0,
+                              ),
+                              Text(
+                                'Office',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 102.0,
+                          // width: 100.0,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFD03032),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(16.0)),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              // Icon(Icons.house),
+                              ImageIcon(
+                                AssetImage("assets/icons/city.png"),
+                                color: Colors.white,
+                                size: 30,
+                              ),
+                              SizedBox(
+                                height: 10.0,
+                              ),
+                              Text(
+                                'Hotel',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -332,8 +426,15 @@ class _HomeScreenState extends State<HomeScreen> {
                             // color: Colors.grey,
                             child: Card(
                               margin: EdgeInsets.zero,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(
+                                    20.0,
+                                  ),
+                                ),
+                              ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -346,57 +447,136 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                       ),
                                     ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text('Blast Apartment'),
-                                        Text('\$246 /month'),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        Icon(
-                                          Icons.location_on_outlined,
-                                        ),
-                                        Text('Purwokerto, Indonesia'),
-                                      ],
+                                    SizedBox(
+                                      height: 8.0,
                                     ),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
+                                        Text(
+                                          'Blast Apartment',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0,
+                                          ),
+                                        ),
+                                        // Text('\$246 /month'),
+                                        RichText(
+                                          text: TextSpan(
+                                            text: '\$246',
+                                            style: appTextStyle(
+                                              FontWeight.bold,
+                                              14.0,
+                                              Colors.red,
+                                            ),
+                                            children: [
+                                              TextSpan(
+                                                text: ' /month',
+                                                style: appTextStyle(
+                                                  FontWeight.normal,
+                                                  14.0,
+                                                  Colors.black,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 8.0,
+                                    ),
+                                    Row(
+                                      children: [
+                                        ImageIcon(
+                                          AssetImage(
+                                              "assets/icons/Location.png"),
+                                          color: Color(0xFF818194),
+                                          // size: 30,
+                                        ),
+                                        SizedBox(
+                                          width: 5.0,
+                                        ),
+                                        Text(
+                                          'Purwokerto, Indonesia',
+                                          style: TextStyle(
+                                            color: Color(0xFF818194),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 8.0,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
                                         Row(
                                           children: [
                                             Card(
-                                              color: Colors.grey,
-                                              child: Icon(
-                                                Icons.bedtime_outlined,
+                                              color: Color(0xFFE7E7E9),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: ImageIcon(
+                                                  AssetImage(
+                                                      "assets/icons/blast_apartment/Group415.png"),
+                                                  color: Colors.black,
+                                                  // size: 8.0,
+                                                ),
                                               ),
                                             ),
-                                            Text('6'),
+                                            Text(
+                                              '6',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                         Row(
                                           children: [
                                             Card(
-                                              color: Colors.grey,
-                                              child: Icon(
-                                                Icons.bedtime_outlined,
+                                              color: Color(0xFFE7E7E9),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: ImageIcon(
+                                                  AssetImage(
+                                                      "assets/icons/blast_apartment/Group419.png"),
+                                                  color: Colors.black,
+                                                  // size: 8.0,
+                                                ),
                                               ),
                                             ),
-                                            Text('3'),
+                                            Text(
+                                              '3',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                         Row(
                                           children: [
                                             Card(
-                                              color: Colors.grey,
-                                              child: Icon(
-                                                Icons.bedtime_outlined,
+                                              color: Color(0xFFE7E7E9),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: Icon(
+                                                  Icons.bedtime_outlined,
+                                                ),
                                               ),
                                             ),
-                                            Text('12448 sqft'),
+                                            Text(
+                                              '12448 sqft',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                         SizedBox(
@@ -418,8 +598,15 @@ class _HomeScreenState extends State<HomeScreen> {
                             // color: Colors.grey,
                             child: Card(
                               margin: EdgeInsets.zero,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(
+                                    20.0,
+                                  ),
+                                ),
+                              ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -432,13 +619,45 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                       ),
                                     ),
+                                    SizedBox(
+                                      height: 8.0,
+                                    ),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text('Blast Apartment'),
-                                        Text('\$246 /month'),
+                                        Text(
+                                          'Blast Apartment',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0,
+                                          ),
+                                        ),
+                                        // Text('\$246 /month'),
+                                        RichText(
+                                          text: TextSpan(
+                                            text: '\$246',
+                                            style: appTextStyle(
+                                              FontWeight.bold,
+                                              14.0,
+                                              Colors.red,
+                                            ),
+                                            children: [
+                                              TextSpan(
+                                                text: ' /month',
+                                                style: appTextStyle(
+                                                  FontWeight.normal,
+                                                  14.0,
+                                                  Colors.black,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                       ],
+                                    ),
+                                    SizedBox(
+                                      height: 8.0,
                                     ),
                                     Row(
                                       children: [
@@ -448,6 +667,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                         Text('Purwokerto, Indonesia'),
                                       ],
                                     ),
+                                    SizedBox(
+                                      height: 8.0,
+                                    ),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
@@ -456,33 +678,60 @@ class _HomeScreenState extends State<HomeScreen> {
                                           children: [
                                             Card(
                                               color: Colors.grey,
-                                              child: Icon(
-                                                Icons.bedtime_outlined,
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: Icon(
+                                                  Icons.bedtime_outlined,
+                                                ),
                                               ),
                                             ),
-                                            Text('6'),
+                                            Text(
+                                              '6',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                         Row(
                                           children: [
                                             Card(
                                               color: Colors.grey,
-                                              child: Icon(
-                                                Icons.bedtime_outlined,
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: Icon(
+                                                  Icons.bedtime_outlined,
+                                                ),
                                               ),
                                             ),
-                                            Text('3'),
+                                            Text(
+                                              '3',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                         Row(
                                           children: [
                                             Card(
                                               color: Colors.grey,
-                                              child: Icon(
-                                                Icons.bedtime_outlined,
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: Icon(
+                                                  Icons.bedtime_outlined,
+                                                ),
                                               ),
                                             ),
-                                            Text('12448 sqft'),
+                                            Text(
+                                              '12448 sqft',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                         SizedBox(
@@ -504,8 +753,15 @@ class _HomeScreenState extends State<HomeScreen> {
                             // color: Colors.grey,
                             child: Card(
                               margin: EdgeInsets.zero,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(
+                                    20.0,
+                                  ),
+                                ),
+                              ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -518,13 +774,45 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                       ),
                                     ),
+                                    SizedBox(
+                                      height: 8.0,
+                                    ),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text('Blast Apartment'),
-                                        Text('\$246 /month'),
+                                        Text(
+                                          'Blast Apartment',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0,
+                                          ),
+                                        ),
+                                        // Text('\$246 /month'),
+                                        RichText(
+                                          text: TextSpan(
+                                            text: '\$246',
+                                            style: appTextStyle(
+                                              FontWeight.bold,
+                                              14.0,
+                                              Colors.red,
+                                            ),
+                                            children: [
+                                              TextSpan(
+                                                text: ' /month',
+                                                style: appTextStyle(
+                                                  FontWeight.normal,
+                                                  14.0,
+                                                  Colors.black,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                       ],
+                                    ),
+                                    SizedBox(
+                                      height: 8.0,
                                     ),
                                     Row(
                                       children: [
@@ -534,6 +822,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                         Text('Purwokerto, Indonesia'),
                                       ],
                                     ),
+                                    SizedBox(
+                                      height: 8.0,
+                                    ),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
@@ -542,33 +833,60 @@ class _HomeScreenState extends State<HomeScreen> {
                                           children: [
                                             Card(
                                               color: Colors.grey,
-                                              child: Icon(
-                                                Icons.bedtime_outlined,
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: Icon(
+                                                  Icons.bedtime_outlined,
+                                                ),
                                               ),
                                             ),
-                                            Text('6'),
+                                            Text(
+                                              '6',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                         Row(
                                           children: [
                                             Card(
                                               color: Colors.grey,
-                                              child: Icon(
-                                                Icons.bedtime_outlined,
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: Icon(
+                                                  Icons.bedtime_outlined,
+                                                ),
                                               ),
                                             ),
-                                            Text('3'),
+                                            Text(
+                                              '3',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                         Row(
                                           children: [
                                             Card(
                                               color: Colors.grey,
-                                              child: Icon(
-                                                Icons.bedtime_outlined,
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: Icon(
+                                                  Icons.bedtime_outlined,
+                                                ),
                                               ),
                                             ),
-                                            Text('12448 sqft'),
+                                            Text(
+                                              '12448 sqft',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                         SizedBox(
@@ -587,6 +905,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
                     Container(
                       // height: 100.0,
                       width: double.infinity,
@@ -599,6 +920,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 5.0,
+                    ),
                     Container(
                       // height: 300.0,
                       width: double.infinity,
@@ -610,6 +934,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             // color: Colors.black45,
 
                             child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
                               child: Container(
                                 padding: EdgeInsets.all(8.0),
                                 child: Row(
@@ -622,12 +949,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                           borderRadius: BorderRadius.all(
                                             Radius.circular(8.0),
                                           ),
-                                          image: DecorationImage(
-                                            image: NetworkImage(
-                                              "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
-                                            ),
-                                            fit: BoxFit.cover,
-                                          ),
+                                          color: Colors.grey,
+                                          // image: DecorationImage(
+                                          //   image: NetworkImage(
+                                          //     "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+                                          //   ),
+                                          //   fit: BoxFit.cover,
+                                          // ),
                                         ),
                                       ),
                                     ),
@@ -637,14 +965,68 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
                                         children: [
                                           Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Text('title'),
-                                              Text('title')
+                                              Text(
+                                                'Luxury Hotel',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 18.0,
+                                                ),
+                                              ),
+                                              Row(
+                                                children: [
+                                                  ImageIcon(
+                                                    AssetImage(
+                                                        "assets/icons/Star.png"),
+                                                    color: Color(0xFFFBBC04),
+                                                    size: 14.0,
+                                                  ),
+                                                  Text('4.2'),
+                                                ],
+                                              ),
                                             ],
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              ImageIcon(
+                                                AssetImage(
+                                                    "assets/icons/Location.png"),
+                                                color: Color(0xFF818194),
+                                                size: 12.0,
+                                              ),
+                                              SizedBox(
+                                                width: 5.0,
+                                              ),
+                                              Text('Elandung, Indonesia'),
+                                            ],
+                                          ),
+                                          RichText(
+                                            text: TextSpan(
+                                              text: '\$203',
+                                              style: appTextStyle(
+                                                FontWeight.bold,
+                                                14.0,
+                                                Colors.red,
+                                              ),
+                                              children: [
+                                                TextSpan(
+                                                  text: ' /month',
+                                                  style: appTextStyle(
+                                                    FontWeight.normal,
+                                                    14.0,
+                                                    Colors.black,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -667,31 +1049,195 @@ class _HomeScreenState extends State<HomeScreen> {
                             //   ),
                             // ),
                           ),
-                          Card(
-                            child: ListTile(
-                              leading: Container(
-                                height: 200.0,
-                                width: 150.0,
-                                child: Text(''),
-                                color: Colors.grey,
+                          Container(
+                            height: 104.0,
+                            // color: Colors.black45,
+
+                            child: Card(
+                              child: Container(
+                                padding: EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      flex: 2,
+                                      child: Container(
+                                        // color: Colors.green,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(8.0),
+                                          ),
+                                          color: Colors.grey,
+                                          // image: DecorationImage(
+                                          //   image: NetworkImage(
+                                          //     "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+                                          //   ),
+                                          //   fit: BoxFit.cover,
+                                          // ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(width: 16.0),
+                                    Expanded(
+                                      flex: 3,
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text('Luxury Hotel'),
+                                              Text('* 4.2'),
+                                            ],
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Icon(
+                                                Icons.location_on_outlined,
+                                              ),
+                                              Text('Elandung, Indonesia'),
+                                            ],
+                                          ),
+                                          RichText(
+                                            text: TextSpan(
+                                              text: '\$246',
+                                              style: appTextStyle(
+                                                FontWeight.bold,
+                                                14.0,
+                                                Colors.red,
+                                              ),
+                                              children: [
+                                                TextSpan(
+                                                  text: ' /month',
+                                                  style: appTextStyle(
+                                                    FontWeight.normal,
+                                                    14.0,
+                                                    Colors.black,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                              title: Text('Luxury Hotel'),
-                              subtitle: Text('Elandung, Indonesia'),
-                              trailing: Text('4.2'),
                             ),
+                            // child: Card(
+                            //   child: ListTile(
+                            //     leading: Container(
+                            //       height: 200.0,
+                            //       width: 150.0,
+                            //       child: Text(''),
+                            //       color: Colors.grey,
+                            //     ),
+                            //     title: Text('Luxury Hotel'),
+                            //     subtitle: Text('Elandung, Indonesia'),
+                            //     trailing: Text('4.2'),
+                            //   ),
+                            // ),
                           ),
-                          Card(
-                            child: ListTile(
-                              leading: Container(
-                                height: 200.0,
-                                width: 150.0,
-                                child: Text(''),
-                                color: Colors.grey,
+                          Container(
+                            height: 104.0,
+                            // color: Colors.black45,
+
+                            child: Card(
+                              child: Container(
+                                padding: EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      flex: 2,
+                                      child: Container(
+                                        // color: Colors.green,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(8.0),
+                                          ),
+                                          color: Colors.grey,
+                                          // image: DecorationImage(
+                                          //   image: NetworkImage(
+                                          //     "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png",
+                                          //   ),
+                                          //   fit: BoxFit.cover,
+                                          // ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(width: 16.0),
+                                    Expanded(
+                                      flex: 3,
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text('Luxury Hotel'),
+                                              Text('* 4.2'),
+                                            ],
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Icon(
+                                                Icons.location_on_outlined,
+                                              ),
+                                              Text('Elandung, Indonesia'),
+                                            ],
+                                          ),
+                                          RichText(
+                                            text: TextSpan(
+                                              text: '\$246',
+                                              style: appTextStyle(
+                                                FontWeight.bold,
+                                                14.0,
+                                                Colors.red,
+                                              ),
+                                              children: [
+                                                TextSpan(
+                                                  text: ' /month',
+                                                  style: appTextStyle(
+                                                    FontWeight.normal,
+                                                    14.0,
+                                                    Colors.black,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                              title: Text('Luxury Hotel'),
-                              subtitle: Text('Elandung, Indonesia'),
-                              trailing: Text('4.2'),
                             ),
+                            // child: Card(
+                            //   child: ListTile(
+                            //     leading: Container(
+                            //       height: 200.0,
+                            //       width: 150.0,
+                            //       child: Text(''),
+                            //       color: Colors.grey,
+                            //     ),
+                            //     title: Text('Luxury Hotel'),
+                            //     subtitle: Text('Elandung, Indonesia'),
+                            //     trailing: Text('4.2'),
+                            //   ),
+                            // ),
                           ),
                         ],
                       ),
@@ -705,26 +1251,34 @@ class _HomeScreenState extends State<HomeScreen> {
         bottomNavigationBar: BottomNavigationBar(
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.grid_view,
+              icon: ImageIcon(
+                AssetImage("assets/icons/Category.png"),
+                // color: Colors.white,
+                size: 26,
               ),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.bookmark_border_outlined,
+              icon: ImageIcon(
+                AssetImage("assets/icons/Bookmark.png"),
+                color: Color(0xFFDDDDDD),
+                size: 26,
               ),
               label: 'Business',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.chat_outlined,
+              icon: ImageIcon(
+                AssetImage("assets/icons/Chat.png"),
+                color: Color(0xFFDDDDDD),
+                size: 26,
               ),
               label: 'School',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
+              icon: ImageIcon(
+                AssetImage("assets/icons/Profile.png"),
+                color: Color(0xFFDDDDDD),
+                size: 26,
               ),
               label: 'School',
             ),
