@@ -122,19 +122,6 @@ class _NewBuildingsState extends State<NewBuildings> {
           ),
         ),
       ),
-      // child: Card(
-      //   child: ListTile(
-      //     leading: Container(
-      //       height: 200.0,
-      //       width: 150.0,
-      //       child: Text(''),
-      //       color: Colors.grey,
-      //     ),
-      //     title: Text('Luxury Hotel'),
-      //     subtitle: Text('Elandung, Indonesia'),
-      //     trailing: Text('4.2'),
-      //   ),
-      // ),
     );
   }
 }

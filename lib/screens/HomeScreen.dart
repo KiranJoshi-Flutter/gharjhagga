@@ -378,9 +378,10 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 // height: 500.0,
                 width: double.infinity,
-                padding: EdgeInsets.symmetric(
-                  vertical: 8.0,
-                  horizontal: 22.0,
+                padding: EdgeInsets.only(
+                  top: 8.0,
+                  left: 22.0,
+                  right: 22.0,
                 ),
                 decoration: BoxDecoration(
                   color: Theme.of(context).scaffoldBackgroundColor,
