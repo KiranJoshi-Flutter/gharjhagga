@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gharjhagga/utlis/constant.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({Key key}) : super(key: key);
@@ -128,7 +129,8 @@ class _DetailScreenState extends State<DetailScreen> {
                   right: 16.0,
                   top: 8.0,
                 ),
-                child: Column(
+                child: ListView(
+                  physics: BouncingScrollPhysics(),
                   children: [
                     Container(
                       height: 50.0,
@@ -213,7 +215,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                 ),
                               ),
                               Text(
-                                '12448 sqft',
+                                '1248 sqft',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -227,33 +229,201 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                     ),
                     Container(
-                      height: 50.0,
+                      // height: 50.0,
                       width: double.infinity,
-                      color: Colors.yellow,
+                      // color: Colors.yellow,
+                      child: ListTile(
+                        contentPadding: EdgeInsets.only(
+                          left: 6.0,
+                        ),
+                        leading: ConstrainedBox(
+                          constraints: BoxConstraints(
+                              // minWidth: 44,
+                              // minHeight: 44,
+                              // maxWidth: 64,
+                              // maxHeight: 64,
+                              ),
+                          child: Image.asset(
+                              'assets/icons/blast_apartment_detail_screen/Ellipse 28.png'),
+                        ),
+                        title: Text(
+                          'Steven Comavalius',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18.0,
+                          ),
+                        ),
+                        subtitle: Text(
+                          'Owner',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                          ),
+                        ),
+                        trailing: SizedBox(
+                          width: 100.0,
+                          child: Row(
+                            children: [
+                              Container(
+                                height: 40.0,
+                                width: 40.0,
+                                child: Card(
+                                  child: ImageIcon(
+                                    AssetImage(
+                                        "assets/icons/blast_apartment_detail_screen/Message.png"),
+                                    color: Colors.black,
+                                    size: 20,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Container(
+                                height: 40.0,
+                                width: 40.0,
+                                child: Card(
+                                  child: ImageIcon(
+                                    AssetImage(
+                                        "assets/icons/blast_apartment_detail_screen/Call.png"),
+                                    color: Colors.black,
+                                    size: 20,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                     Container(
-                      height: 50.0,
+                      // height: 50.0,
                       width: double.infinity,
-                      color: Colors.pink,
+                      // color: Colors.pink,
+                      child: Divider(
+                        thickness: 1.0,
+                      ),
                     ),
                     Container(
-                      height: 100.0,
+                      // height: 100.0,
                       width: double.infinity,
-                      color: Colors.purple,
+                      // color: Colors.purple,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Location',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Image.asset(
+                                'assets/icons/blast_apartment_detail_screen/Location2.png',
+                                color: Color(0xFF818194),
+                                height: 16.0,
+                                width: 16.0,
+                              ),
+                              SizedBox(
+                                width: 4.0,
+                              ),
+                              Text(
+                                'Jalan Pandjaltan 12, Purwokerto, Indonesia 53371',
+                                style: TextStyle(
+                                  color: Color(0xFF818194),
+                                  fontSize: 14.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                     Container(
-                      height: 50.0,
+                      height: 150.0,
                       width: double.infinity,
-                      color: Colors.orange,
+                      // color: Colors.orange,
+                      child: Image.asset(
+                        'assets/icons/Group454.png',
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Divider(
+                      thickness: 1.0,
                     ),
                     Container(
-                      height: 50.0,
+                      // height: 50.0,
                       width: double.infinity,
-                      color: Colors.grey,
+                      // color: Colors.grey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Description',
+                            style: TextStyle(
+                              color: Color(0xFF1F244B),
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 12.0,
+                          ),
+                          Text(
+                            'Situated in Purwokerto, FixOn Capsule Hotel features accommodation with free WiFi and free private parking.At the hotel, each ro...  Read More',
+                            style: TextStyle(
+                              color: Color(0xFF555568),
+                              fontSize: 16.0,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 26.0,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ),
+            ),
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: RichText(
+                text: TextSpan(
+                  text: '\$246',
+                  style: appTextStyle(
+                    FontWeight.bold,
+                    22.0,
+                    Color(0xFFEC5A22),
+                  ),
+                  children: [
+                    TextSpan(
+                      text: '/month',
+                      style: appTextStyle(
+                        FontWeight.normal,
+                        16.0,
+                        Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Container(
+                height: 30.0,
+                width: 214.0,
+                color: Colors.blue,
+                child: Center(
+                  child: Text('Book Now'),
+                ),
+              ),
+              label: '',
             ),
           ],
         ),
