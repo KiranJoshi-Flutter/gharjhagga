@@ -56,7 +56,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           // color: Colors.white,
                           child: InkWell(
                             onTap: (() {
-                              // Navigator.of(context).pop();
+                              Navigator.of(context).pop();
                             }),
                             child: Icon(
                               Icons.chevron_left_rounded,
@@ -79,12 +79,12 @@ class _DetailScreenState extends State<DetailScreen> {
                           height: 60.0,
                           width: 138.0,
                           decoration: BoxDecoration(
-                            color: Color(0xFF000000),
+                            color: Color(0xFF615B5B),
                             borderRadius: BorderRadius.all(
                               Radius.circular(16),
                             ),
                           ),
-                          child: InkWell(
+                          child: GestureDetector(
                             onTap: (() {}),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -171,7 +171,12 @@ class _DetailScreenState extends State<DetailScreen> {
                         ),
                         Expanded(
                           flex: 2,
-                          child: Text('$rating'),
+                          child: Text(
+                            '$rating',
+                            style: TextStyle(
+                              fontSize: 14.0,
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -472,17 +477,27 @@ class _DetailScreenState extends State<DetailScreen> {
               label: 'Price',
             ),
             BottomNavigationBarItem(
-              icon: Container(
-                height: 30.0,
-                width: 214.0,
-                // color: Colors.blue,
-                child: Center(
-                  child: Text(
-                    'Book Now',
-                    style: appTextStyle(
-                      FontWeight.normal,
-                      16.0,
-                      Colors.black,
+              icon: Padding(
+                padding: const EdgeInsets.only(
+                  right: 12.0,
+                ),
+                child: Container(
+                  height: 60.0,
+                  // width: 214.0,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF1B1839),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(16.0),
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Book Now',
+                      style: appTextStyle(
+                        FontWeight.normal,
+                        16.0,
+                        Colors.white,
+                      ),
                     ),
                   ),
                 ),
