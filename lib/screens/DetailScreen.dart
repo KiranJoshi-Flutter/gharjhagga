@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:gharjhagga/utlis/constant.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -9,6 +10,8 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
+  double rating = 3.0;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,7 +47,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             ),
                           ),
                           margin: EdgeInsets.symmetric(
-                            horizontal: 16,
+                            horizontal: 27,
                           ),
                           padding: EdgeInsets.symmetric(
                             horizontal: 8,
@@ -53,7 +56,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           // color: Colors.white,
                           child: InkWell(
                             onTap: (() {
-                              Navigator.of(context).pop();
+                              // Navigator.of(context).pop();
                             }),
                             child: Icon(
                               Icons.chevron_left_rounded,
@@ -65,40 +68,41 @@ class _DetailScreenState extends State<DetailScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 160.0,
+                      height: 120.0,
                     ),
                     Row(
                       children: [
+                        SizedBox(
+                          width: 25.0,
+                        ),
                         Container(
+                          height: 60.0,
+                          width: 138.0,
                           decoration: BoxDecoration(
                             color: Color(0xFF000000),
                             borderRadius: BorderRadius.all(
                               Radius.circular(16),
                             ),
                           ),
-                          margin: EdgeInsets.symmetric(
-                            horizontal: 16,
-                          ),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 8.0,
-                          ),
-                          // color: Colors.white,
                           child: InkWell(
-                            onTap: (() {
-                              Navigator.of(context).pop();
-                            }),
+                            onTap: (() {}),
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Icon(
-                                  Icons.chevron_left_rounded,
-                                  size: 28.0,
+                                ImageIcon(
+                                  AssetImage(
+                                      "assets/icons/blast_apartment_detail_screen/Group 442.png"),
                                   color: Colors.white,
+                                  size: 26.0,
+                                ),
+                                SizedBox(
+                                  width: 6.0,
                                 ),
                                 Text(
                                   'AR View',
                                   style: TextStyle(
                                     color: Colors.white,
+                                    fontSize: 16.0,
                                   ),
                                 ),
                                 SizedBox(
@@ -130,12 +134,46 @@ class _DetailScreenState extends State<DetailScreen> {
                   top: 8.0,
                 ),
                 child: ListView(
+                  padding: EdgeInsets.only(
+                    top: 16.0,
+                  ),
                   physics: BouncingScrollPhysics(),
                   children: [
-                    Container(
-                      height: 50.0,
-                      width: double.infinity,
-                      color: Colors.green,
+                    Row(
+                      children: [
+                        Expanded(
+                          flex: 8,
+                          child: Container(
+                            // height: 50.0,
+                            width: double.infinity,
+                            // color: Colors.green,
+                            child: RatingBar.builder(
+                              initialRating: 3,
+                              minRating: 1,
+                              direction: Axis.horizontal,
+                              allowHalfRating: true,
+                              itemCount: 5,
+                              itemPadding:
+                                  EdgeInsets.symmetric(horizontal: 4.0),
+                              itemBuilder: (context, _) => Icon(
+                                Icons.star,
+                                size: 20.0,
+                                color: Colors.amber,
+                              ),
+                              onRatingUpdate: (rate) {
+                                print(rate);
+                                setState(() {
+                                  rating = rate;
+                                });
+                              },
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Text('$rating'),
+                        ),
+                      ],
                     ),
                     Container(
                       // height: 50.0,
@@ -173,8 +211,8 @@ class _DetailScreenState extends State<DetailScreen> {
                               Text(
                                 '6 Rooms',
                                 style: TextStyle(
-                                    // fontWeight: FontWeight.bold,
-                                    ),
+                                  fontSize: 14.0,
+                                ),
                               ),
                             ],
                           ),
@@ -195,7 +233,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               Text(
                                 '3 Bath',
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14.0,
                                 ),
                               ),
                             ],
@@ -217,7 +255,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               Text(
                                 '1248 sqft',
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14.0,
                                 ),
                               ),
                             ],
@@ -226,6 +264,14 @@ class _DetailScreenState extends State<DetailScreen> {
                             width: 10.0,
                           ),
                         ],
+                      ),
+                    ),
+                    Container(
+                      // height: 50.0,
+                      width: double.infinity,
+                      // color: Colors.pink,
+                      child: Divider(
+                        thickness: 1.0,
                       ),
                     ),
                     Container(
@@ -317,6 +363,9 @@ class _DetailScreenState extends State<DetailScreen> {
                               fontSize: 18.0,
                             ),
                           ),
+                          SizedBox(
+                            height: 12.0,
+                          ),
                           Row(
                             children: [
                               Image.asset(
@@ -349,8 +398,14 @@ class _DetailScreenState extends State<DetailScreen> {
                         fit: BoxFit.fill,
                       ),
                     ),
+                    SizedBox(
+                      height: 19.0,
+                    ),
                     Divider(
                       thickness: 1.0,
+                    ),
+                    SizedBox(
+                      height: 19.0,
                     ),
                     Container(
                       // height: 50.0,
@@ -390,6 +445,8 @@ class _DetailScreenState extends State<DetailScreen> {
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
+          showUnselectedLabels: false,
+          showSelectedLabels: false,
           items: [
             BottomNavigationBarItem(
               icon: RichText(
@@ -412,18 +469,25 @@ class _DetailScreenState extends State<DetailScreen> {
                   ],
                 ),
               ),
-              label: '',
+              label: 'Price',
             ),
             BottomNavigationBarItem(
               icon: Container(
                 height: 30.0,
                 width: 214.0,
-                color: Colors.blue,
+                // color: Colors.blue,
                 child: Center(
-                  child: Text('Book Now'),
+                  child: Text(
+                    'Book Now',
+                    style: appTextStyle(
+                      FontWeight.normal,
+                      16.0,
+                      Colors.black,
+                    ),
+                  ),
                 ),
               ),
-              label: '',
+              label: 'Book',
             ),
           ],
         ),
