@@ -54,6 +54,7 @@ flutter:
     - assets/icons/
     - assets/icons/blast_apartment/
     - assets/icons/blast_apartment_detail_screen/
+    - assets/icons/filter_screen/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
